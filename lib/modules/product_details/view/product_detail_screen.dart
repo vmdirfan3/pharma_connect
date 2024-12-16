@@ -40,7 +40,7 @@ class ProductDetailScreen extends StatelessWidget {
                               image: AssetImage(
                                 url ?? "",
                               ),
-                              fit: BoxFit.fill,
+                              fit: BoxFit.contain,
                             ),
                             borderRadius: BorderRadius.circular(8)),
                       ))

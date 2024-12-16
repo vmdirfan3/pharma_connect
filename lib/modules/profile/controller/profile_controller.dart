@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 class ProfileController with ChangeNotifier {
   ProfileController(){
-    print("object hi bro");
+  fetchData();
   }
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -12,7 +12,7 @@ class ProfileController with ChangeNotifier {
   TextEditingController emailController = TextEditingController();
   TextEditingController idController = TextEditingController();
   TextEditingController addressController = TextEditingController();
-
+  final formKey = GlobalKey<FormState>();
   bool _isEditing = false;
 
   String? _documentId;
@@ -33,7 +33,7 @@ class ProfileController with ChangeNotifier {
         _documentId = doc.id; // Store document ID for updates
 
         final data = doc.data();
-
+        print("object $data");
         nameController.text = data['name'] ?? '';
         phoneController.text = data['phone'] ?? '';
         emailController.text = data['email'] ?? '';
